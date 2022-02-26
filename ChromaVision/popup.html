@@ -10,31 +10,59 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="w-75 mx-auto">
-    <h1>A simple extension for the colorblind.</h1>
-    <div id="Colorblind_Picker">
-      <h3 id="rainbow">ChromaVision</h3>
-      <button id="open-button">Open Form</button>
-      <button id="close-button">Close Form</button>
+  <body class="mx-auto w-75 p-3 text-center">
+    <h1 id="rainbow">ChromaVision</h1>
+    <h5>A simple extension for the colorblind.</h5>
+
+    <div id="Colorblind_Picker" class="">
+      <div class="row my-4">
+        <div class="col-6 text-right">
+          <button
+            id="open-button"
+            type="button"
+            class="btn btn-outline-primary"
+          >
+            Open Form
+          </button>
+        </div>
+        <div class="col-6 text-left">
+          <button
+            id="close-button"
+            type="button"
+            class="btn btn-outline-primary"
+          >
+            Close Form
+          </button>
+        </div>
+      </div>
 
       <form id="popup" class="">
-        <div id="option-normal" class="row">
-          <label class="">Trichromacy / Normal</label>
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
-          </label>
+        <div id="option-normal" class="row my-2">
+          <div class="col-8">
+            <label class="">Trichromacy / Normal</label>
+          </div>
+          <div class="col-4">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
 
-        <div id="option-achromatomaly" class="row">
-          <label>Blue Cone Monochromacy / Achromatomaly</label>
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
-          </label>
+        <div id="option-achromatomaly" class="row my-2">
+          <div class="col-8">
+            <label class="">Blue Cone Monochromacy / Achromatomaly</label>
+          </div>
+          <div class="col-4">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
 
-        <div id="option-achromatopsia" class="row">
+        <!-- use react for ease of adding classes -->
+        <!--  <div id="option-achromatopsia">
           <label>Monochromacy / Achromatopsia</label>
           <label class="switch">
             <input type="checkbox" />
@@ -88,7 +116,7 @@
             <input type="checkbox" />
             <span class="slider round"></span>
           </label>
-        </div>
+        </div> -->
       </form>
     </div>
     <script type="text/javascript" src="popup.js"></script>
