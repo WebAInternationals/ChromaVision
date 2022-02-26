@@ -14,7 +14,7 @@
     <h1 id="rainbow">ChromaVision</h1>
     <h5>A simple extension for the colorblind.</h5>
 
-    <div id="Colorblind_Picker" class="">
+    <div id="Colorblind_Picker" class="container-fluid">
       <div class="row my-4">
         <div class="col-6 text-right">
           <button
@@ -117,6 +117,22 @@
             <span class="slider round"></span>
           </label>
         </div> -->
+
+        <div class="row">
+          <div class="col-12">
+            <label for="hueSlider" class="form-label">Hue Value: </label>
+          </div>
+          <div class="col-12">
+            <input
+              type="range"
+              class="form-range w-75"
+              min="0"
+              max="360"
+              step="1"
+              id="hueSlider"
+            />
+          </div>
+        </div>
       </form>
     </div>
     <script type="text/javascript" src="popup.js"></script>
