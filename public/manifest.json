@@ -4,7 +4,7 @@
   "description": "This extension will accomodate the colorblind",
   "version": "1.0.0",
   "manifest_version": 3,
-  "permissions": ["storage", "tabs", "activeTab"],
+  "permissions": ["scripting", "storage", "tabs", "activeTab"],
   "action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"

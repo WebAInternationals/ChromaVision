@@ -2,56 +2,12 @@
 <html>
   <head>
     <title>ChromaVision</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" />
   </head>
   <body class="mx-auto w-75 p-3 text-center">
-    <h1 id="rainbow">ChromaVision</h1>
-    <h5>A simple extension for the colorblind.</h5>
-
-    <div id="Colorblind_Picker" class="container-fluid">
-      <div class="row my-4">
-        <div class="col-6 text-right">
-          <button
-            id="open-button"
-            type="button"
-            class="btn btn-outline-primary"
-          >
-            Expand Settings
-          </button>
-        </div>
-        <div class="col-6 text-left">
-          <button
-            id="close-button"
-            type="button"
-            class="btn btn-outline-primary"
-          >
-            Hide Settings
-          </button>
-        </div>
-      </div>
-      <button id="changeColor" class="button">click</button>
-      <form id="popup">
-        <div id="ColorBlindSelection"></div>
-        <div id="option-hue" class="row">
-          <div class="col-12">
-            <label for="hueSlider" class="form-label">Hue Value: </label>
-            <input type="text" id="textInput" value="" />
-          </div>
-          <div class="col-12">
-            <input
-              type="range"
-              class="form-range w-75"
-              min="0"
-              max="360"
-              step="1"
-              id="hueSlider"
-            />
-          </div>
-        </div>
-      </form>
-    </div>
-    <script type="text/javascript" src="popup.js"></script>
-    <script type="text/javascript" src="filter.js"></script>
+    <div id="ColorBlindSelection"></div>
+    <!-- <script type="text/javascript" src="popup.js"></script> -->
+    <script type="text/javascript" src="content-script.js"></script>
 
     <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -68,7 +24,5 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script> -->
-
-    
   </body>
 </html>
