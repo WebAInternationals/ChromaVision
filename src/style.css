@@ -2,6 +2,10 @@ body {
   min-width: 500px; /* width of popup */
 }
 
+.button {
+
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -29,7 +33,7 @@ body {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;
