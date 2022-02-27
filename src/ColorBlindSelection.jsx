@@ -16,6 +16,7 @@ class ColorBlindSelection extends Component {
   };
 
   render() {
+    console.log(document.body);
     return this.state.colorBlindTypes.map((type) => (
       <div id="" class="row my-2">
         <div class="col-8">
