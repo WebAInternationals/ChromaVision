@@ -9,6 +9,9 @@ var filterStateID = [
   "Red-Blind / Protanopia",
   "Blue-Weak / Tritanomaly",
   "Blue-Blind / Tritanopia",
+    // include our own here
+  "Special Filter 1",
+  "Special Filter 2"
 ];
 
 var eventSelected = "";
