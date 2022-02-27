@@ -1,30 +1,33 @@
-// Initialize button with user's preferred color
-let changeColor = document.getElementById("changeColor");
-chrome.storage.sync.get("color", ({ color }) => {
-  changeColor.style.backgroundColor = color;
-});
-
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
+let slider = document.getElementById("hueSlider");
+slider.addEventListener("change", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  });
+  console.log("tabid: " + tab.id);
+  sendSliderValue(tab.id);
 });
 
-// The body of this function will be executed as a content script inside the
-// current page
-function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
-    let openingTags = '<svg><filter id="changeFilter"><feColorMatrix type="';
-    let type = 'matrix"';
-    let values = 'values="0 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 1 0"';
-    // type="hueRotate" values="180"
-    let closingTags = "></feColorMatrix></filter></svg>";
-    // document.body.style.backgroundColor = color;
-    document.body.style.filter = " url(#changeFilter)";
-    document.body.innerHTML += openingTags + type + values + closingTags;
-  });
+// sends message to content script
+function sendSliderValue(tabId) {
+  let message = {
+    name: "hueSliderValue",
+    value: slider.value,
+  };
+  console.log("value: " + slider.value);
+  chrome.tabs.sendMessage(tabId, message);
+}
+
+// let button = document.getElementById("");
+// button.addEventListener("click", async () => {
+//   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+//   console.log("tabid: " + tab.id);
+//   sendMatrixValue(tab.id);
+// });
+
+// sends message to content script
+function sendMatrixValue(tabId) {
+  let message = {
+    name: "matrixValue",
+    value: "0 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 1 0",
+  };
+  console.log("matrix value: " + message.value);
+  chrome.tabs.sendMessage(tabId, message);
 }

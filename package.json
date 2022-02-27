@@ -14,10 +14,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "./script/build.sh",
+    "build": "react-scripts build",
+    "new-build":"rm -r build/*; export INLINE_RUNTIME_CHUNK=false; export GENERATE_SOURCEMAP=false; npm run build;",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "move": "npm run build && rm -rf ../public && mv build/static ../public"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

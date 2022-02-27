@@ -6,9 +6,9 @@
 
 In the project directory, you can run:
 
-### `npm run move`
+### `npm run new-build`
 
-Creates the `build` directory for the chrome extension.
+Creates a fresh `build` directory for the chrome extension.
 
 Turn on `Developer mode` in chrome and select `Load unpacked`
 Then, select the build directory created to install the chrome extension
