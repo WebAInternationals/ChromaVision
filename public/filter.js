@@ -12,6 +12,7 @@ function sendSliderValue(tabId) {
     value: slider.value,
   };
   console.log("value: " + slider.value);
+  document.getElementById("hueValue").innerText = `${slider.value}`;
   chrome.tabs.sendMessage(tabId, message);
 }
 
