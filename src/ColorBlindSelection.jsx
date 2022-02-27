@@ -17,18 +17,19 @@ class ColorBlindSelection extends Component {
 
   render() {
     return this.state.colorBlindTypes.map((type) => (
-      <div id="" class="row my-2">
+      <div class="row my-2">
         <div class="col-8">
           <label>{type}</label>
         </div>
-        <div class="col-4">
-          <label class="switch">
-            <input type="checkbox" />
+        <div div  class="col-4">
+          <label class="switch" >
+            <input type="checkbox" id={type}/>
             <span class="slider round"></span>
           </label>
         </div>
       </div>
     ));
+
   }
 }
 
