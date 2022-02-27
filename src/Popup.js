@@ -19,38 +19,21 @@ function Popup() {
     ],
   };
   const [contrast, setContrast] = useState('0.7');
+  const [id, setId] = useState(null);
   const handleContrastChange = (e) => {
     setContrast(e.target.value);
+    applyFilter(id);
   };
 
-  const matrix = `
-      0.292746395668271,0.707241249103522,0.000000156558466,0,0
-      0.292750943335557,0.707252206989406,-0.000000220239329,0,0
-      -0.022336513011080,0.022336649609041,1.000002309415585,0,0
-      0,0,0,1,0`;
-
-  const injectScript = () => {
-    // deuteranopiaFilter(matrix);
-  };
-
-  async function getTab() {
-    let queryOptions = { active: true, currentWindow: true };
-    let tabs = await chrome.tabs.query(queryOptions);
-    console.log(tabs);
-    return tabs[0];
-  }
   const handleReset = () => {
     disableOptions();
     setContrast(0.7);
+    setId(null);
     normal();
   };
 
-  const handleSelect = (e) => {
-    console.log('checked? ' + e.target.checked);
-    if (e.target.checked) {
-      disableOptions();
-      e.target.checked = true;
-      const id = e.target.value;
+  const applyFilter = (id) => {
+    if (id !== null) {
       if (id < 10) {
         deuteranopia(id % 10, contrast);
       } else if (id < 20) {
@@ -58,8 +41,19 @@ function Popup() {
       } else {
         tritanopia(id % 10, contrast);
       }
-      console.log(id);
+    }
+  };
+
+  const handleSelect = (e) => {
+    // console.log('checked? ' + e.target.checked);
+    // console.log('value = ' + e.target.value);
+    if (e.target.checked) {
+      setId(e.target.value);
+      disableOptions();
+      e.target.checked = true;
+      applyFilter(e.target.value);
     } else {
+      setId(null);
       normal();
     }
   };
