@@ -2,6 +2,17 @@ import React, { Component } from "react";
 
 class ColorBlindSelection extends Component {
   state = {
+    colorFilterID: [
+      "option-normal",
+      "option-achromatomaly",
+      "option-achromatopsia",
+      "option-deuteranomaly",
+      "option-deuteranopia",
+      "option-protanomaly",
+      "option-protanopia",
+      "option-tritanomaly",
+      "option-tritanopia",
+    ],
     colorBlindTypes: [
       "Trichromacy / Normal",
       "Blue Cone Monochromacy / Achromatomaly",
@@ -16,9 +27,8 @@ class ColorBlindSelection extends Component {
   };
 
   render() {
-    console.log(document.body);
-    return this.state.colorBlindTypes.map((type) => (
-      <div id="" class="row my-2">
+    return this.state.colorBlindTypes.map((type, i) => (
+      <div id={this.state.colorFilterID.at(i)} class="row my-2">
         <div class="col-8">
           <label>{type}</label>
         </div>
