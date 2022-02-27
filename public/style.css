@@ -1,6 +1,5 @@
 body {
-  width: 410px;
-  height: 100%;
+  min-width: 500px; /* width of popup */
 }
 
 .switch {

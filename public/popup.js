@@ -1,15 +1,15 @@
 var buttonSelected = false;
 var filterStateID = [
-    "Trichromacy / Normal",
-    "Blue Cone Monochromacy / Achromatomaly",
-    "Monochromacy / Achromatopsia",
-    "Green-Weak / Deuteranomaly",
-    "Green-Blind / Deuteranopia",
-    "Red-Weak / Protanomaly",
-    "Red-Blind / Protanopia",
-    "Blue-Weak / Tritanomaly",
-    "Blue-Blind / Tritanopia",
-  ];
+  "Trichromacy / Normal",
+  "Blue Cone Monochromacy / Achromatomaly",
+  "Monochromacy / Achromatopsia",
+  "Green-Weak / Deuteranomaly",
+  "Green-Blind / Deuteranopia",
+  "Red-Weak / Protanomaly",
+  "Red-Blind / Protanopia",
+  "Blue-Weak / Tritanomaly",
+  "Blue-Blind / Tritanopia",
+];
 
 var eventSelected = "";
 
@@ -23,13 +23,12 @@ function closeForm() {
 
 function listenFilterOptions() {
   for (let i = 0; i < filterStateID.length; i++) {
-    document.getElementById(filterStateID.at(i)).onchange = function() {
+    document.getElementById(filterStateID.at(i)).onchange = function () {
       if (!buttonSelected) {
         eventSelected = filterStateID.at(i);
         disableOptions();
         buttonSelected = true;
-  
-      } else if (buttonSelected && filterStateID.at(i) == eventSelected){
+      } else if (buttonSelected && filterStateID.at(i) == eventSelected) {
         enableOptions();
         buttonSelected = false;
         eventSelected = "";
@@ -50,10 +49,12 @@ function disableOptions() {
 function enableOptions() {
   eventSelected = "";
   for (let i = 0; i < filterStateID.length; i++) {
-      document.getElementById(filterStateID.at(i)).disabled = false;
+    document.getElementById(filterStateID.at(i)).disabled = false;
   }
 }
 
 document.getElementById("open-button").addEventListener("click", openForm);
 document.getElementById("close-button").addEventListener("click", closeForm);
-document.getElementById("ColorBlindSelection").addEventListener("click", listenFilterOptions);
+document
+  .getElementById("ColorBlindSelection")
+  .addEventListener("click", listenFilterOptions);
