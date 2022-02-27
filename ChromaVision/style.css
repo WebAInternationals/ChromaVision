@@ -9,6 +9,7 @@ body {
   height: 34px;
 }
 
+
 .switch input {
   opacity: 0;
   width: 0;
@@ -45,6 +46,7 @@ input:checked + .slider {
 
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
+
 }
 
 input:checked + .slider:before {
@@ -61,3 +63,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
