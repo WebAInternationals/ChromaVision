@@ -3,7 +3,6 @@ import { normal } from './utils/normal';
 import { deuteranopia } from './utils/deuteranopia';
 import { protanopia } from './utils/protanopia';
 import { tritanopia } from './utils/tritanopia';
-// import { deuteranopiaFilter } from './filters/deuteranopia';
 
 function Popup() {
   const settings = {

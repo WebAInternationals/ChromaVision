@@ -28,7 +28,7 @@ export const cvdFilter = (matrix, cvd) => {
               </svg>
         `;
 
-  console.log(filterID.innerHTML);
+  //   console.log(filterID.innerHTML);
   stylingID.innerHTML =
     'html{-webkit-filter:url(#' +
     cvd +
@@ -42,7 +42,7 @@ export const cvdFilter = (matrix, cvd) => {
     cvd +
     ');}';
 
-  console.log(stylingID.innerHTML);
+  //   console.log(stylingID.innerHTML);
   setTimeout(function () {
     window.scrollBy(1, 1);
     window.scrollBy(-1, -1);

@@ -7,12 +7,10 @@ function ColorBlindSelection() {
 
   const expandSettings = () => {
     setShowPopup(true);
-    console.log('expanding settings');
   };
 
   const hideSettings = () => {
     setShowPopup(false);
-    console.log('hiding settings');
   };
   return (
     <div>
